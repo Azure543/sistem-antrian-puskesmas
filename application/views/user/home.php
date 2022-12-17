@@ -182,7 +182,6 @@
 								</div>
 
 							</form>
-							<br><center><p>Repost by <a href='https://sharecodingan.blogspot.com/' title='sharecodingan.blogspot.com' target='_blank'>Share Codingan</a></p></center>
 
 						</div>
 					</div>
@@ -336,7 +335,7 @@
 <!-- Copyright Section -->
 <section class="copyright py-4 text-center text-white">
 	<div class="container">
-		<small>&copy; 2022 - Abid Taufiqur Rohman </small>
+		<small>&copy; 2022 - Kelompok 3 </small>
 	</div>
 </section>
 
@@ -421,7 +420,6 @@
 <!-- Bootstrap core JavaScript -->
 <script src="<?php echo base_url('assets/user')?>/vendor/jquery/jquery.min.js"></script>
 <script src="<?php echo base_url('assets/user')?>/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
 <!-- Plugin JavaScript -->
 <script src="<?php echo base_url('assets/user')?>/vendor/jquery-easing/jquery.easing.min.js"></script>
 

@@ -126,7 +126,6 @@ class Index extends CI_Controller {
 	}
 
 	public function proses_login(){
-		print_r($_POST);
 		$username=$this->input->post('username');
 		$password=md5($this->input->post('password'));
 
