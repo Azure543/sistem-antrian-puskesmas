@@ -94,60 +94,63 @@ class Index extends CI_Controller {
 
 	public function registrasi()
 	{
-		$no_identitas = $this->input->post('no_identitas'); //langkah 2
-		$nama = $this->input->post('nama');
-		$jenis_kelamin = $this->input->post('jenis_kelamin');
-		// $usia = $this->input->post('usia');
-		$tgl_lahir = $this->input->post('tgl_lahir');
-		$alamat = $this->input->post('alamat');
-		$no_telp = $this->input->post('no_telp');
-		$username = $this->input->post('username');
-		$password = md5($this->input->post('password'));
+		if ($this->input->post())
+		{
+			$inputUser = [
+				'no_identitas' => $this->input->post('no_identitas'),
+				'nama' => $this->input->post('nama'),
+				'jenis_kelamin' => $this->input->post('jenis_kelamin'),
+				'tgl_lahir' => $this->input->post('tgl_lahir'),
+				'alamat' => $this->input->post('alamat'),
+				'no_telp' => $this->input->post('no_telp'),
+				'username' => $this->input->post('username'),
+				'password' => $this->input->post('password'),
+			];
 
-		$this->db->set('no_identitas',$no_identitas);//langkah ke 3
-		$this->db->set('nama',$nama);
-		$this->db->set('jenis_kelamin',$jenis_kelamin);
-		// $this->db->set('usia',$usia);
-		$this->db->set('tgl_lahir',$tgl_lahir);
-		$this->db->set('alamat',$alamat);
-		$this->db->set('no_telp',$no_telp);
-		$this->db->set('username',$username);
-		$this->db->set('password',$password);
-
-
-		$this->db->insert('pasien');
+			$this->Puskesmas_model->insert_data($inputUser, 'pasien');
+		}
 
 		$this->session->set_flashdata("notif",true);
 		$this->session->set_flashdata("pesan",'Registrasi Berhasil');
 		$this->session->set_flashdata("type",'success');
 
 		redirect(base_url());
-
 	}
 
 	public function proses_login(){
-		$username=$this->input->post('username');
-		$password=md5($this->input->post('password'));
 
-		$this->db->where('username',$username);
-		$this->db->where('password',$password);
-		$getpasien=$this->db->get('pasien')->row();
+		$username = $this->input->post('username', true);
+		$password = $this->input->post('password', true);
+		$pasien = $this->Puskesmas_model->check_data('pasien', ['username' => $username])->row_array();
 
-		if($getpasien){
-			$this->session->set_userdata('id_pasien',$getpasien->id_pasien);
-			$this->session->set_userdata('nama',$getpasien->nama);
+		if ($pasien) {
+			if ($password == $pasien['password']) {
+				$userData = [
+					'id_pasien' => $pasien['id_pasien'],
+					'nama' => $pasien['nama']
+				];
 
+				$this->session->set_userdata($userData);
+
+				$this->session->set_flashdata("notif",true);
+				$this->session->set_flashdata("pesan",'Login Berhasil');
+				$this->session->set_flashdata("type",'success');
+				redirect(base_url());
+
+
+			} else {
+				$this->session->set_flashdata("notif",true);
+				$this->session->set_flashdata("pesan",'Password Salah');
+				$this->session->set_flashdata("type",'warning');
+				redirect(base_url());
+
+			}
+		} else {
 			$this->session->set_flashdata("notif",true);
-			$this->session->set_flashdata("pesan",'Login Berhasil');
-			$this->session->set_flashdata("type",'success');
-			redirect(base_url());
-		}else{
-			$this->session->set_flashdata("notif",true);
-			$this->session->set_flashdata("pesan",'Username atau Password Salah');
+			$this->session->set_flashdata("pesan",'Username Salah');
 			$this->session->set_flashdata("type",'warning');
 			redirect(base_url());
 		}
-
 	}
 
 	public function logout(){

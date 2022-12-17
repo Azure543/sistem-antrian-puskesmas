@@ -9,6 +9,9 @@
 	<meta name="author" content="">
 
 	<title>Antrian Puskesmas </title>
+	<style>
+
+	</style>
 	<link rel="shortcut icon" href="assets/user/img/logo.png">
 
 	<!-- Custom fonts for this theme -->
@@ -41,6 +44,10 @@
 
 	.masthead .masthead-avatar {
 		width: 8rem !important;
+	}
+
+	.table > tbody > tr > * {
+		vertical-align: middle;
 	}
 </style>
 
@@ -207,9 +214,8 @@
 			</div>
 
 			<!-- Portfolio Grid Items -->
-			<div class="row">
+			<div class="row>
 				<div class="container">
-					<div class="row justify-content-md-center">
 						<div class="col-md-12" style="margin-top: 20px">
 							<!-- <h1 align="center">Login </h1> -->
 							<form action="<?php echo base_url('Index/saveAntrian') ?>" method="post">
@@ -218,7 +224,7 @@
 										<h6><label>Pilih Poli</label></h6>
 									</div>
 
-									<div class="col-md-5">
+									<div class="col-md-10">
 										<select name="id_poli" id="id_poli" class="form-control" onchange="noAntrian(this.value)">
 											<option value=""> pilih </option>
 											<?php foreach ($getPoli as $row ) {
@@ -229,12 +235,12 @@
 									</div>
 								</div>
 
-								<div class ="row">
+								<div class ="row mt-3">
 									<div class ="col-md-2">
 										<h6><label>No Antrian Poli</label></h6>
 									</div>
 
-									<div class="col-md-5">
+									<div class="col-md-10">
 										<input type="text" name="no_antrian_poli2" id="no_antrian_poli2" value="" disabled="" class="form-control">
 										<input type="hidden" name="no_antrian_poli" id="no_antrian_poli" value="" class="form-control">
 										<input type="hidden" name="no_antrian" value="<?php echo $no_antrian ?>">
@@ -242,7 +248,7 @@
 								</div>
 
 
-								<div class="row text-right">
+								<div class="row text-right mt-4">
 									<div class="col-md-7">
 										<input type="submit" name="simpan" id="simpan" value="Ambil Antrian" class="btn btn-primary">
 									</div>
