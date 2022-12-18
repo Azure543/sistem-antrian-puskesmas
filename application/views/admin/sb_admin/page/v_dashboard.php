@@ -96,8 +96,8 @@
 
 
 
-<script src="<?=  base_url('assets/admin/sb_admin/') ?>js/jquery.js"></script>
+<script src="<?= base_url('assets/admin/sb_admin/') ?>js/jquery.js"></script>
 <!-- Morris Charts JavaScript -->
-<script src="<?=  base_url('assets/admin/sb_admin/') ?>js/plugins/morris/raphael.min.js"></script>
-<script src="<?=  base_url('assets/admin/sb_admin/') ?>js/plugins/morris/morris.min.js"></script>
-<script src="<?=  base_url('assets/admin/sb_admin/') ?>js/plugins/morris/morris-data.js"></script>
+<script src="<?= base_url('assets/admin/sb_admin/') ?>js/plugins/morris/raphael.min.js"></script>
+<script src="<?= base_url('assets/admin/sb_admin/') ?>js/plugins/morris/morris.min.js"></script>
+<script src="<?= base_url('assets/admin/sb_admin/') ?>js/plugins/morris/morris-data.js"></script>
