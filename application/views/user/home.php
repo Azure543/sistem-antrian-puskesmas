@@ -8,36 +8,41 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>Antrian Puskesmas </title>
+	<title>E-ANTRIAN - Antrian Online </title>
 	<style>
 
 	</style>
 	<link rel="shortcut icon" href="assets/user/img/logo.png">
 
 	<!-- Custom fonts for this theme -->
-	<link href="<?php echo base_url('assets/user')?>/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+	<link href="<?php echo base_url('assets/user') ?>/vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
+		  type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-	<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+		  type="text/css">
 
 	<!-- Theme CSS -->
-	<link href="<?php echo base_url('assets/user')?>/css/freelancer.min.css" rel="stylesheet">
-	<link href="<?php echo base_url('assets/user')?>/lib/noty.css" rel="stylesheet">
-	<link href="<?php echo base_url('assets/user')?>/lib/themes/metroui.css" rel="stylesheet">
+	<link href="<?php echo base_url('assets/user') ?>/css/freelancer.min.css" rel="stylesheet">
+	<link href="<?php echo base_url('assets/user') ?>/lib/noty.css" rel="stylesheet">
+	<link href="<?php echo base_url('assets/user') ?>/lib/themes/metroui.css" rel="stylesheet">
 
 </head>
 <style type="text/css">
-	.btncostume{
+
+	.btncostume {
 		background: #2c3e50;
 		color: white;
 	}
-	sup{
+
+	sup {
 		color: red;
 	}
-	.border1{
+
+	.border1 {
 		border: thin solid;
 	}
 
-	.costum{
+	.costum {
 		background: white;
 		border: thin solid #fff;
 	}
@@ -56,25 +61,29 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
 	<div class="container">
-		<a class="navbar-brand js-scroll-trigger" href="#page-top">Antrian Puskesmas</a>
-		<button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+		<a class="navbar-brand js-scroll-trigger" href="#page-top">E-ANTRIAN</a>
+		<button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
+				type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+				aria-expanded="false" aria-label="Toggle navigation">
 			Menu
 			<i class="fas fa-bars"></i>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarResponsive">
 			<ul class="navbar-nav ml-auto">
-				<?php if(empty($this->session->userdata('id_pasien'))) {?>
+				<?php if (empty($this->session->userdata('id_pasien'))) { ?>
 					<li class="nav-item mx-0 mx-lg-1">
 						<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#registrasi">Login</a>
 					</li>
-				<?php }else{?>
+				<?php } else { ?>
 					<li class="nav-item mx-0 mx-lg-1">
-						<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#"><?php echo $this->session->userdata('nama'); ?></a>
+						<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+						   href="#"><?php echo $this->session->userdata('nama'); ?></a>
 					</li>
 					<li class="nav-item mx-0 mx-lg-1">
-						<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="<?php echo base_url('Index/logout') ?>">Logout</a>
+						<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+						   href="<?php echo base_url('Index/logout') ?>">Logout</a>
 					</li>
-				<?php }?>
+				<?php } ?>
 				<li class="nav-item mx-0 mx-lg-1">
 					<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#bantuan">Bantuan</a>
 				</li>
@@ -85,21 +94,23 @@
 
 
 <!-- Masthead -->
-<header class="masthead bg-primary text-white text-center">
+<header class="masthead bg-info text-white text-center">
 	<div class="container d-flex align-items-center flex-column">
 
 		<!-- Masthead Avatar Image -->
 
 
 		<!-- Masthead Heading -->
-		<h1 class="masthead-heading text-uppercase mb-0"><img class="masthead-avatar mb-5" src="<?php echo base_url('assets/user') ?>/img/logo.png" alt="">Puskesmas X</h1>
+		<h1 class="masthead-heading text-uppercase mb-0"><img class="masthead-avatar mb-5"
+															  src="<?php echo base_url('assets/user') ?>/img/logo.png"
+															  alt="">Puskesmas XXX</h1>
 		<div class="row">
 			<div class="col-md-12" style="border: thin solid; ">
 				<h3>NO ANTRIAN SAAT INI</h3>
 				<h1 style="margin-top: 5px;"><?php echo $no_antrian; ?></h1>
 			</div>
 		</div>
-		<?php if(!empty($this->session->userdata('id_pasien'))){ ?>
+		<?php if (!empty($this->session->userdata('id_pasien'))) { ?>
 			<div class="row" style="margin-top: 60px">
 				<div class="col-md-3" style="border: thin solid; ">
 					<h3><?php echo $poli_umum; ?></h3>
@@ -113,10 +124,11 @@
 					<H6>Poli Imunisasi</H6></div>
 				<div class="col-md-3" style="border: thin solid; ">
 					<h3><?php echo $poli_tb; ?>
-						<H6>Poli Tuberculosis</H6></div>
+						<H6>Poli Tuberculosis</H6>
+				</div>
 			</div>
 		<?php } ?>
-		<?php if(empty($this->session->userdata('id_pasien'))){ ?>
+		<?php if (empty($this->session->userdata('id_pasien'))) { ?>
 			<h4 class="masthead mb-0" style="margin-top: 10px !important;padding: 20px;">Selamat Datang di Puskesmas X.
 				<br> Jika anda belum memiliki akun, silakan Registrasi terlebih dahulu.</h4>
 			<button type="button" class="btn btncostume" data-toggle="modal" data-target="#exampleModal">
@@ -133,19 +145,21 @@
 		</div>
 
 		<!-- Masthead Subheading -->
-		<?php if(!empty($this->session->userdata('id_pasien'))){ ?>
+		<?php if (!empty($this->session->userdata('id_pasien'))) { ?>
 			<div class="row" style="width: 60%;">
 				<div class="col-md-5 text-right">
 					<label><h5>Nomor Antrian Anda :</label></h5>
 				</div>
 				<div class="col-md-2 text-justify"><h5><?php echo $antrian_pasien ?></h5></div>
-				<?php if(!empty($id_antrian_poli)){?>
-					<div class="col-md-5"><a href="<?php echo base_url('Index/cetak')."/".$id_antrian_poli ?>" style="color: #000; background: #fff; padding: 10px;" target="_blank">Cetak</a></div>
+				<?php if (!empty($id_antrian_poli)) { ?>
+					<div class="col-md-5"><a href="<?php echo base_url('Index/cetak') . "/" . $id_antrian_poli ?>"
+											 style="color: #000; background: #fff; padding: 10px;"
+											 target="_blank">Cetak</a></div>
 				<?php } ?>
 			</div>
 			<div class="row" style="width: 60%;">
 				<div class="col-md-5 text-right"><label><h5>Poli :</label></h5></div>
-				<div class="col-md-5 text-justify"><h5><?php echo $nama_poli?></h5></div>
+				<div class="col-md-5 text-justify"><h5><?php echo $nama_poli ?></h5></div>
 			</div>
 		<?php } ?>
 
@@ -154,7 +168,7 @@
 
 <!-- Portfolio Section -->
 <section class="page-section portfolio" id="registrasi">
-	<?php if(empty($this->session->userdata('id_pasien'))){ ?>
+	<?php if (empty($this->session->userdata('id_pasien'))) { ?>
 		<div class="container">
 
 			<!-- Portfolio Section Heading -->
@@ -177,8 +191,8 @@
 						<div class="col-md-4" style="margin-top: 20px">
 							<!-- <h1 align="center">Login </h1> -->
 							<form action="<?php echo base_url('Index/proses_login') ?>" method='post'>
-								<label >Username</label>
-								<input type="username" name="username" class="form-control" >
+								<label>Username</label>
+								<input type="username" name="username" class="form-control">
 
 								<label>Password</label>
 								<input type="password" name="password" class="form-control">
@@ -198,7 +212,7 @@
 			<!-- /.row -->
 
 		</div>
-	<?php }else{ ?>
+	<?php } else { ?>
 		<div class="container">
 
 			<!-- Portfolio Section Heading -->
@@ -215,69 +229,73 @@
 
 			<!-- Portfolio Grid Items -->
 			<div class="row>
-				<div class="container">
-						<div class="col-md-12" style="margin-top: 20px">
-							<!-- <h1 align="center">Login </h1> -->
-							<form action="<?php echo base_url('Index/saveAntrian') ?>" method="post">
-								<div class ="row">
-									<div class ="col-md-2">
-										<h6><label>Pilih Poli</label></h6>
-									</div>
-
-									<div class="col-md-10">
-										<select name="id_poli" id="id_poli" class="form-control" onchange="noAntrian(this.value)">
-											<option value=""> pilih </option>
-											<?php foreach ($getPoli as $row ) {
-												?>
-												<option value="<?php echo $row->id_poli; ?>"> <?php echo $row->kode_poli; ?> </option>
-											<?php } ?>
-										</select>
-									</div>
-								</div>
-
-								<div class ="row mt-3">
-									<div class ="col-md-2">
-										<h6><label>No Antrian Poli</label></h6>
-									</div>
-
-									<div class="col-md-10">
-										<input type="text" name="no_antrian_poli2" id="no_antrian_poli2" value="" disabled="" class="form-control">
-										<input type="hidden" name="no_antrian_poli" id="no_antrian_poli" value="" class="form-control">
-										<input type="hidden" name="no_antrian" value="<?php echo $no_antrian ?>">
-									</div>
-								</div>
-
-
-								<div class="row text-right mt-4">
-									<div class="col-md-7">
-										<input type="submit" name="simpan" id="simpan" value="Ambil Antrian" class="btn btn-primary">
-									</div>
-								</div>
-							</form>
-
-							<div class="row text-justify" >
-								<h6>Keterangan :</h6>
-								<ol>
-									<li>Poli Umum (PLUM)</li>
-									<li>Poli Gigi (PLGG) </li>
-									<li>Poli Imunisasi (PLIM)</li>
-									<li>Poli Tuberculosis (PLTB)</li>
-								</ol>
-							</div>
+				<div class=" container
+			">
+			<div class="col-md-12" style="margin-top: 20px">
+				<!-- <h1 align="center">Login </h1> -->
+				<form action="<?php echo base_url('Index/saveAntrian') ?>" method="post">
+					<div class="row">
+						<div class="col-md-2">
+							<h6><label>Pilih Poli</label></h6>
 						</div>
 
-
+						<div class="col-md-10">
+							<select name="id_poli" id="id_poli" class="form-control" onchange="noAntrian(this.value)">
+								<option value=""> pilih</option>
+								<?php foreach ($getPoli as $row) {
+									?>
+									<option value="<?php echo $row->id_poli; ?>"> <?php echo $row->kode_poli; ?> </option>
+								<?php } ?>
+							</select>
+						</div>
 					</div>
-				</div>
 
+					<div class="row mt-3">
+						<div class="col-md-2">
+							<h6><label>No Antrian Poli</label></h6>
+						</div>
+
+						<div class="col-md-10">
+							<input type="text" name="no_antrian_poli2" id="no_antrian_poli2" value="" disabled=""
+								   class="form-control">
+							<input type="hidden" name="no_antrian_poli" id="no_antrian_poli" value=""
+								   class="form-control">
+							<input type="hidden" name="no_antrian" value="<?php echo $no_antrian ?>">
+						</div>
+					</div>
+
+
+					<div class="row text-right mt-4">
+						<div class="col-md-7">
+							<input type="submit" name="simpan" id="simpan" value="Ambil Antrian"
+								   class="btn btn-primary">
+						</div>
+					</div>
+				</form>
+
+				<div class="row text-justify">
+					<h6>Keterangan :</h6>
+					<ol>
+						<li>Poli Umum (PLUM)</li>
+						<li>Poli Gigi (PLGG)</li>
+						<li>Poli Imunisasi (PLIM)</li>
+						<li>Poli Tuberculosis (PLTB)</li>
+					</ol>
+				</div>
 			</div>
-			<!-- /.row -->
+
+
+		</div>
+		</div>
+
+		</div>
+		<!-- /.row -->
 		</div>
 	<?php } ?>
 </section>
 
 <!-- About Section -->
-<section class="page-section bg-primary text-white mb-0" id="bantuan">
+<section class="page-section bg-info text-white mb-0" id="bantuan">
 	<div class="container">
 
 		<!-- About Section Heading -->
@@ -295,9 +313,11 @@
 		<!-- About Section Content -->
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-4.ml-auto" align="center" >
+				<div class="col-lg-4.ml-auto" align="center">
 					<p class="lead">Klik Login > Pilih Poli > Klik Cetak</p>
-					<p class="lead">Pasien melakukan Registrasi > Input Nomor Identitas, Nama Pasien, Jenis Kelamin, Usia, Tanggal Lahir, Alamat, Nomor Telephone, Username dan Password > Klik Login >  Pilih Poli > Klik Cetak </p>
+					<p class="lead">Pasien melakukan Registrasi > Input Nomor Identitas, Nama Pasien, Jenis Kelamin,
+						Usia, Tanggal Lahir, Alamat, Nomor Telephone, Username dan Password > Klik Login > Pilih Poli >
+						Klik Cetak </p>
 				</div>
 			</div>
 		</div>
@@ -313,8 +333,6 @@
 </section>
 
 
-
-
 <!-- Footer -->
 <footer class="footer text-center">
 	<div class="container">
@@ -323,7 +341,7 @@
 			<!-- Footer Location -->
 			<div class="col-lg-6 mb-5 mb-lg-0">
 				<h4 class="text-uppercase mb-4">Location</h4>
-				<p class="lead mb-0">Jalan Kenangan Indah 4E
+				<p class="lead mb-0">Jalanin aja dulu 4E
 					<br>No.16 Rt.07/Rw.98</p>
 			</div>
 
@@ -331,7 +349,7 @@
 			<div class="col-lg-6">
 				<h4 class="text-uppercase mb-4">Telephone</h4>
 
-				<p class="lead mb-0">(021)79184767</p>
+				<p class="lead mb-0">(021)69696969</p>
 			</div>
 
 		</div>
@@ -353,7 +371,8 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog"
+	 aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -366,17 +385,19 @@
 				<form action="<?php echo base_url('Index/registrasi') ?>" method="post">
 
 					<div>
-						<label >Nomor KTP <sup>*</sup></label>
-						<input type="text" id="no_identitas" name="no_identitas" class="form-control" value="" placeholder="Nomor KTP" required="">
+						<label>Nomor KTP <sup>*</sup></label>
+						<input type="text" id="no_identitas" name="no_identitas" class="form-control" value=""
+							   placeholder="Nomor KTP" required="">
 					</div>
 
 					<div>
-						<label >Nama <sup>*</sup></label>
-						<input type="text" id="nama" name="nama" class="form-control" value="" placeholder="Nama" required="">
+						<label>Nama <sup>*</sup></label>
+						<input type="text" id="nama" name="nama" class="form-control" value="" placeholder="Nama"
+							   required="">
 					</div>
 
 					<div>
-						<label >Jenis Kelamin</label>
+						<label>Jenis Kelamin</label>
 						<select id="jenis_kelamin" name="jenis_kelamin" class="form-control">
 							<option value="">Pilih</option>
 							<option value="Laki-Laki">Laki-Laki</option>
@@ -385,28 +406,32 @@
 					</div>
 
 					<div>
-						<label >Tanggal Lahir <sup>*</sup></label>
-						<input type="date" id="tgl_lahir" name="tgl_lahir" class="form-control" value="" placeholder="Tanggal Lahir" required="">
+						<label>Tanggal Lahir <sup>*</sup></label>
+						<input type="date" id="tgl_lahir" name="tgl_lahir" class="form-control" value=""
+							   placeholder="Tanggal Lahir" required="">
 					</div>
 
 					<div>
-						<label >Alamat</label>
+						<label>Alamat</label>
 						<textarea id="alamat" name="alamat" class="form-control" placeholder="Alamat"></textarea>
 					</div>
 
 					<div>
-						<label >No Telephone</label>
-						<input type="no_telp" id="no_telp" name="no_telp" class="form-control" value="" placeholder="No Telephone">
+						<label>No Telephone</label>
+						<input type="no_telp" id="no_telp" name="no_telp" class="form-control" value=""
+							   placeholder="No Telephone">
 					</div>
 
 					<div>
-						<label >Username <sup>*</sup></label>
-						<input type="text" id="username" name="username" class="form-control" value="" placeholder="Username" required="">
+						<label>Username <sup>*</sup></label>
+						<input type="text" id="username" name="username" class="form-control" value=""
+							   placeholder="Username" required="">
 					</div>
 
 					<div>
-						<label >Password <sup>*</sup></label>
-						<input type="password" id="password" name="password" class="form-control" value="" placeholder="Password" required="">
+						<label>Password <sup>*</sup></label>
+						<input type="password" id="password" name="password" class="form-control" value=""
+							   placeholder="Password" required="">
 					</div>
 
 					<br><br>
@@ -424,52 +449,52 @@
 </div>
 
 <!-- Bootstrap core JavaScript -->
-<script src="<?php echo base_url('assets/user')?>/vendor/jquery/jquery.min.js"></script>
-<script src="<?php echo base_url('assets/user')?>/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<?php echo base_url('assets/user') ?>/vendor/jquery/jquery.min.js"></script>
+<script src="<?php echo base_url('assets/user') ?>/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- Plugin JavaScript -->
-<script src="<?php echo base_url('assets/user')?>/vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="<?php echo base_url('assets/user') ?>/vendor/jquery-easing/jquery.easing.min.js"></script>
 
 <!-- Contact Form JavaScript -->
-<script src="<?php echo base_url('assets/user')?>/js/jqBootstrapValidation.js"></script>
-<script src="<?php echo base_url('assets/user')?>/js/contact_me.js"></script>
+<script src="<?php echo base_url('assets/user') ?>/js/jqBootstrapValidation.js"></script>
+<script src="<?php echo base_url('assets/user') ?>/js/contact_me.js"></script>
 
 <!-- Custom scripts for this template -->
-<script src="<?php echo base_url('assets/user')?>/js/freelancer.min.js"></script>
-<script src="<?php echo base_url('assets/user')?>/lib/noty.min.js"></script>
+<script src="<?php echo base_url('assets/user') ?>/js/freelancer.min.js"></script>
+<script src="<?php echo base_url('assets/user') ?>/lib/noty.min.js"></script>
 <script type="text/javascript">
-	function noAntrian(id_poli){
+	function noAntrian(id_poli) {
 		// alert(id_poli);?
-		if(id_poli!=""){
+		if (id_poli != "") {
 			$.ajax({
 
 				url: "<?php echo base_url('Index/getNoAntrian'); ?>",
-				type : "POST",
-				data : "id_poli="+id_poli,
+				type: "POST",
+				data: "id_poli=" + id_poli,
 				datatype: "json",
-				success:function(response){
+				success: function (response) {
 					console.log(response);
 					// alert(data);
 					var output = JSON.parse(response);
-					if(output.no > output.maks){
+					if (output.no > output.maks) {
 						$("#no_antrian_poli2").val('Data Sudah Penuh');
 						// $("#simpan").toggle('slow');
-						$("#simpan").prop("disabled",true);
-					}else{
+						$("#simpan").prop("disabled", true);
+					} else {
 
 						$("#no_antrian_poli").val(output.no_hasil);
 						$("#no_antrian_poli2").val(output.no_hasil);
-						$("#simpan").prop("disabled",false);
+						$("#simpan").prop("disabled", false);
 					}
 				} // Munculkan alert error
 			});
-		}else{
+		} else {
 			$("#no_antrian_poli").val("");
 			$("#no_antrian_poli2").val("");
 		}
 	}
 </script>
 
-<?php if($this->session->flashdata('notif')){?>
+<?php if ($this->session->flashdata('notif')) { ?>
 	<script type="text/javascript">
 		new Noty({
 

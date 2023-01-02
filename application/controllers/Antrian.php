@@ -17,8 +17,12 @@ class Antrian extends CI_Controller {
 		$this->db->where('tgl_antrian',$nowDate);
 		$this->db->order_by('no_antrian','DESC');
 		$antrian = $this->db->get('antrian')->row();
+
+
 		if($antrian){
 			$data['no_antrian'] = $antrian->no_antrian;
+				var_dump($data['no_antrian']);
+				die();
 
 		}else{
 			$data['no_antrian'] = 0;
